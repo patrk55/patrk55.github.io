@@ -3,17 +3,15 @@
 			font-size: 1.5vw;
 			text-align: justify;			
 			color: lightgray;
-			text-shadow: 3px 3px darkgoldenrod;
+		}
+		*,*::before,*::after{
+			box-sizing: border-box;
 		}
 		a{
 			text-decoration: none;
 		}
 		p{
 			margin-top: 0%;
-		}
-		strong{
-			color:#fff240;
-			font-weight: unset;
 		}
 		img {
 		  	display: block;
@@ -22,10 +20,16 @@
 			border-style: solid;
 			border-width: 3px;
 			border-color: lightgray;
+		}		
+		.yellow{
+			 color:#fff240;
+			 text-shadow: 0.6vw 0.6vw rebeccapurple;
 		}
+
 		main{
 			position: relative;
 			width: 40%;
+			height: 100%;
 			margin: auto;
 			background-color:#2e2e2e;
 		}
@@ -37,7 +41,6 @@
 		}
 		.right img{
 			width: 70%;
-			height: auto;
 		}
 		.left, .right{
 			top: 3px;
@@ -48,26 +51,63 @@
 			width: 10%;
 		}
 
+		
+		/*MOBILE VS DESKTOP HIDE ELEMENTS*/
+		.mobile{
+			display: none;
+		}
+		.desktop{
+			display: block;
+		}
+
+
+
 		@media screen and (max-width: 1000px) {
-		 	.left, .right{
-		     	width: 90%;/* The width is 100%, when the viewport is 800px or smaller */
-		 		left: unset;
-		 		right:  unset;
-		 		position: relative;
+			*{
+				font-size: 3vw;
+			}
+
+		 	.left, .right, main{
+		 		width: 85%;
+		     	left: unset;
+		     	right: unset;	 		
+		 		top: unset;
 		 		margin: auto;
-		 		top: auto;
-		 	}
-		 	.right{
-		 		position: fixed;
-		 		bottom: 10px;
-		 		height: 5%;
-		 	}
-		 	.right img{
-				width: auto;
-				height: 70%;
-				float: right;
+		 		height: fit-content;
+
+		    }
+		    .left{
+		 		position: relative;
+		    }
+
+		    .right{
+		 		bottom: 2vh;
+		 		height: fit-content;
+		 		left: 50%;
+		 		transform: translateX(-50%);
+		 	}		 	
+		 	.right ul{	
+		 		text-align: center; 
+			}
+			.right li{
+				display: inline;
 			}
 		 	main{
-		 		width: 90%;
+		 		height: 75vh;
+		 		position: sticky;
+		 		overflow-y: auto;
+		 		margin-top: 1.5vw;
+		 	}
+		 	::-webkit-scrollbar{
+		 		width: 0px;
+		 	}
+
+
+		 	/*MOBILE VS DESKTOP HIDE ELEMENTS*/
+		 	.mobile{
+		 		display: block;
+		 	}
+		 	.desktop{
+		 		display: none;
 		 	}
 		 }
