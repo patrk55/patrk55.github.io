@@ -1,0 +1,127 @@
+		*{
+			font-family: 'IBM Plex Mono', monospace;
+			font-size: 1.5vw;
+			text-align: justify;			
+			color: lightgray;
+			margin-top: 0%;
+			box-sizing: border-box;
+		}		
+		::selection {
+			/* Change highlight background color to black */
+			background: #8f5d84;
+			/* Change highlight text color to red */
+			color: #f9ce65;
+		}
+		
+		.yellow{
+			 color:#f9ce65;
+			 text-shadow: 4px 4px #8f5d84;
+		}
+		.yellow::selection { color: lightgray; }
+
+		img {
+		  	display: block;
+		  	margin:auto;
+			width: 99%;
+			border-style: solid;
+			border-width: 4px;
+			border-color: lightgray;
+		}			
+		a{ text-decoration: none;}
+
+
+
+		.container{
+			display: grid;
+			grid-template-columns: 10% 40% 10%;
+			gap: 10px;
+			padding: 10px;
+
+			justify-content: center;
+		}
+		.column{
+			position: sticky;
+		 	overflow-y: auto;
+			height: 98vh;
+			background-color: #2e2e2e;
+		}
+		::-webkit-scrollbar{
+			width: 0px;
+		}
+
+		.left{
+			padding: 10px 1vw 10px 1vw;
+		}
+		.center img:hover{
+			border-color: #8f5d84;
+			border-width: 3px;
+			width: 100%;
+		}
+		.right img{
+			padding-top: 10px;
+			width: 70%;
+		}
+
+		.card{
+			padding: 10px	;
+		}
+
+		.menu a {
+		  	display: block; /* Make the links appear below each other */
+		  	padding: 6px; /* Add some padding */
+		}
+
+		.menu a:hover {
+		  	background-color: #8f5d84; /* Pink background on mouse-over */
+		  	color: #f9ce65; 
+		}
+
+		/*MOBILE VS DESKTOP HIDE ELEMENTS*/
+		.mobile{
+			display: none;
+		}
+		.desktop{
+			display: auto;
+		}
+
+
+
+		@media screen and (max-width: 1000px) {
+			*{
+				font-size: 3vw;
+			}
+			.container{
+				display: grid;
+				grid-template-columns: 95%;
+				gap: 10px;
+				padding: 10px;
+				height: 100%;
+			}
+			.left{
+				padding: 0px 1vw 10px 1vw;
+			}
+			.center{
+				height: 20vh;
+			}
+
+			.menu a{
+				text-align: center;
+				width: 31%;
+				display: inline-table;
+				margin: auto;
+			}
+		 	.left, .right, .center{		
+		 		height: fit-content;
+		    }
+ 	
+
+
+
+		 	/*MOBILE VS DESKTOP HIDE ELEMENTS*/
+		 	.mobile{
+		 		display: block;
+		 	}
+		 	.desktop{
+		 		display: none;
+		 	}
+		 }
